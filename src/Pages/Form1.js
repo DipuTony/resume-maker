@@ -6,45 +6,60 @@ const Form1 = (props) => {
 
   return (
     <div>
-      <Formik
-        initialValues={{
-          name: '',
-          email: '',
-          phone:'',
-          address:'',
-          occupation:'',
-        }}
-        onSubmit={async (values) => {
-          // await new Promise((r) => setTimeout(r, 500));
-          // alert(JSON.stringify(values, null, 2));
-          props.formData(values)
-        }}
-      >
-        <Form>
-          <div>
-            <label htmlFor="name">Name</label>
-            <Field className="border border-black px-2 rounded-sm" id="name" name="name" />
-          </div>
-          <div>
-            <label htmlFor="occupation">Occupation</label>
-            <Field className="border border-black px-2 rounded-sm" id="occupation" name="namoccupatione" />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <Field className="border border-black px-2 rounded-sm" id="email" name="email" type="email" />
-          </div>
-          <div>
-            <label htmlFor="phone">Phone</label>
-            <Field className="border border-black px-2 rounded-sm" id="phone" name="phone" />
-          </div>
-          <div>
-            <label htmlFor="address">Address</label>
-            <Field className="border border-black px-2 rounded-sm" id="address" name="address" />
-          </div>
+      <div className='grid grid-cols-12'>
+        <div className='col-span-2  bg-sky-300 h-screen'></div>
+        <div className='col-span-10'>
+          <Formik
+            initialValues={{
+              name: '',
+              email: '',
+              phone: '',
+              address: '',
+              occupation: '',
+            }}
+            onSubmit={async (values) => {
+              // await new Promise((r) => setTimeout(r, 500));
+              // alert(JSON.stringify(values, null, 2));
+              props.formData(values)
+            }}
+          >
 
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
+            <div className='m-10'>
+              <Form>
+                <div className='flex flex-wrap'>
+
+                  <div className='mx-5'>
+                    <p className='font-semibold text-lg' htmlFor="name">Name</p>
+                    <Field className="border outline-2 outline-sky-300 border-black px-2 py-1 my-2 w-64 border-2 shadow-lg rounded-sm" id="name" name="name" />
+                  </div>
+                  <div className='mx-5'>
+                    <p className='font-semibold text-lg' htmlFor="occupation">Occupation</p>
+                    <Field className="border outline-2 outline-sky-300 border-black px-2 py-1 my-2 w-64 border-2 shadow-lg rounded-sm" id="occupation" name="occupation" />
+                  </div>
+                  <div className='mx-5'>
+                    <p className='font-semibold text-lg' htmlFor="email">Email</p>
+                    <Field className="border outline-2 outline-sky-300 border-black px-2 py-1 my-2 w-64 border-2 shadow-lg rounded-sm" id="email" name="email" type="email" />
+                  </div>
+                  <div className='mx-5'>
+                    <p className='font-semibold text-lg' htmlFor="phone">Phone</p>
+                    <Field className="border outline-2 outline-sky-300 border-black px-2 py-1 my-2 w-64 border-2 shadow-lg rounded-sm" id="phone" name="phone" />
+                  </div>
+                  <div className='mx-5'>
+                    <p className='font-semibold text-lg' htmlFor="address">Address</p>
+                    <Field className="border outline-2 outline-sky-300 border-black px-2 py-1 my-2 w-64 border-2 shadow-lg rounded-sm" id="address" name="address" />
+                  </div>
+                </div>
+                <div className='mx-5'>
+                  <p htmlFor="occupation">About You</p>
+                  <Field component="textarea" className="w-full border border-black px-2 rounded-sm" id="about" name="about" />
+                </div>
+
+                <button type="submit">Submit</button>
+              </Form>
+            </div>
+          </Formik>
+        </div>
+      </div>
     </div>
   )
 }
