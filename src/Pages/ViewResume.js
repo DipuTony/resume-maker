@@ -5,7 +5,7 @@ function ViewResume(props) {
 
     const data = props.data;
 
-    const handlePrint=()=>{
+    const handlePrint = () => {
         console.log("Print")
         html2canvas(document.getElementById("Dipu"))
             .then(function (canvas) {
@@ -63,9 +63,9 @@ function ViewResume(props) {
 
                     <div className='md:col-span-7 col-span-8 bg-white border border-black'>
                         <div className='mx-10 mt-12'>
-                            <p className='text-5xl font-bold'>{data?.name ? data?.name : 'Dipu Kumar Singh' }</p>
+                            <p className='text-5xl font-bold'>{data?.name ? data?.name : 'Dipu Kumar Singh'}</p>
                             <p className='font-medium py-2 text-2xl'>{data?.occupation ? data?.name : 'Software Engineer'}</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquid nulla illo sint, inventore maiores cupiditate ad praesentium saepe. Distinctio. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet, non!</p>
+                            <p>{data?.about && data.about}</p>
                         </div>
                         <div className='mx-10 mt-8 '>
                             <p className='text-3xl py-2 font-semibold border-b-2 border-black'>Experence</p>
